@@ -1,0 +1,9 @@
+<div class="banner"><h2>Save any kind of movies</h2></div>
+
+<ul class="card">
+  <% @lists.each do |list|%>
+  <li ><%= link_to list.name, list_path(list.id)  %></li>
+  <%end%>
+</ul>
+
+<%= link_to "Add a new list", new_list_path  %>
