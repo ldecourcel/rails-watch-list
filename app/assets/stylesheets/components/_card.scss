@@ -30,8 +30,28 @@
 }
 .list-movies{
   display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .card-movie {
-  height: 200px;
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 400px;
+  background-size: cover;
+  transition: 500ms;
+    &:hover {
+      filter: grayscale(90%);
+      h2, p, a {
+      opacity: 1;
+    }
+  }
+  h2, p, a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.01;
+  }
 }

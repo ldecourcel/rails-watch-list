@@ -1,10 +1,13 @@
 <div class="banner"><h2>Save any kind of movies</h2></div>
 
 <div class="container">
-<div id="btn"><%= link_to "Add a new list", new_list_path  %></div>
+<%= link_to "Add a new list", new_list_path, class:"btn" %>
   <div class="card-test">
   <% @lists.each do |list|%>
   <div>
+  <%if list.photo.attached?%>
+   <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+  <%end%>
     <h3><%= link_to list.name.upcase, list_path(list.id)%></h3>
     <p><%=list.bookmarks.count%> movie(s)<p>
   </div>
@@ -12,4 +15,6 @@
 </div>
 
 </div>
+
+
 
