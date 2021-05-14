@@ -1,11 +1,16 @@
 <h3><%=@list.name%></h3>
-<ul>
 
-<% @list.bookmarks.each do |bookmark| %>
-<li><%= bookmark.comment %> - <%= bookmark.movie.title %>- <%= link_to "delete", bookmark_path(bookmark), method: :delete,
-                                                                                                data: { confirm: "Are you sure?" }  %></li>
-
+<div class="list-movies">
+  <% @list.bookmarks.each do |bookmark| %>
+  <div class="card-movie">
+  <div><%= image_tag(bookmark.movie.poster_url) %></div>
+  <div><%= bookmark.movie.title %></div>
+  <div><%= bookmark.comment %></div>
+  <div><%= link_to "delete", bookmark_path(bookmark), method: :delete,
+                                                              data: { confirm: "Are you sure?" }  %></div>
 <% end %>
-</ul>
+</div>
+
+
 <%= link_to "Add a movie", new_list_bookmark_path(@list) %>
 <%= link_to "Go to all lists", lists_path %>

@@ -1,9 +1,15 @@
 <div class="banner"><h2>Save any kind of movies</h2></div>
 
-<ul class="card">
+<div class="container">
+<div id="btn"><%= link_to "Add a new list", new_list_path  %></div>
+  <div class="card-test">
   <% @lists.each do |list|%>
-  <li ><%= link_to list.name, list_path(list.id)  %></li>
+  <div>
+    <h3><%= link_to list.name.upcase, list_path(list.id)%></h3>
+    <p><%=list.bookmarks.count%> movie(s)<p>
+  </div>
   <%end%>
-</ul>
+</div>
 
-<%= link_to "Add a new list", new_list_path  %>
+</div>
+
