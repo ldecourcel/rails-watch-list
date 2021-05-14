@@ -1,5 +1,5 @@
 <%= link_to "Add a movie", new_list_bookmark_path(@list), class:"btn" %>
-<%= link_to "Go to all lists", lists_path, class:"btn"  %>
+<%= link_to "Go to all lists", root_path, class:"btn"  %>
 
 <div class="list-movies">
   <% @list.bookmarks.each do |bookmark| %>
